@@ -25,4 +25,5 @@
     <string name="kisekae">着せ替え</string>
     <string name="sanpo">散歩</string>
     <string name="kaiwa">会話</string>
+    <string name="CharacterButton">→</string>
 </resources>

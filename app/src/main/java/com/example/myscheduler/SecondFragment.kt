@@ -1,5 +1,6 @@
 package com.example.myscheduler
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -105,4 +106,8 @@ class SecondFragment : Fragment() {
         super.onDestroy()
         realm.close()
     }
+
+
+
+
 }
