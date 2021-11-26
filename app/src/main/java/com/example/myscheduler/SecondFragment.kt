@@ -33,6 +33,7 @@ class SecondFragment : Fragment() {
             savedInstanceState: Bundle?
 
 
+
     ): View? {
         _binding = FragmentSecondBinding.inflate(inflater, container, false)
 
@@ -43,7 +44,7 @@ class SecondFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         view.findViewById<Button>(R.id.button_second).setOnClickListener {
-            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
+            findNavController().navigate(R.id.action_to_scheduleFragment)
         }
 
         (activity as? MainActivity)?.setFabVisible(View.VISIBLE)
@@ -64,8 +65,8 @@ class SecondFragment : Fragment() {
             .setOnDateChangeListener { view, year, month, dayOfMonth ->
                 findSchedule(year, month, dayOfMonth)
 
-
             }
+
     }
 
     private fun findSchedule(
@@ -91,8 +92,8 @@ class SecondFragment : Fragment() {
 
         adapter.setOnItemClickListener { id ->
             id?.let {
-                val action = SecondFragmentDirections
-                    .actionToScheduleEditFragment(it)
+                val action =
+                    FirstFragmentDirections.actionToScheduleFragment(it)
                 findNavController().navigate(action)
             }
         }

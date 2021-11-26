@@ -2,7 +2,6 @@ package com.example.myscheduler
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -24,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.fab.setOnClickListener { view ->
-            naviController.navigate(R.id.action_to_scheduleEditFragment)
+            naviController.navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
 
         binding.Characterfab.setOnClickListener { view ->
@@ -32,6 +31,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
         }
+        
     }
 
     override fun onSupportNavigateUp()
@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     fun setFabVisible(visibility: Int) {
         binding.fab.visibility = visibility
         binding.Characterfab.visibility = visibility
+
     }
 
 }
