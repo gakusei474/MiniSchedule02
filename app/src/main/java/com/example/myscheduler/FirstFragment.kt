@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -28,9 +27,11 @@ class FirstFragment : Fragment() {
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
 
+
     ): View? {
         _binding = FragmentFirstBinding.inflate(inflater, container, false)
         return binding.root
+
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -51,7 +52,7 @@ class FirstFragment : Fragment() {
             }
         }
 
-        (activity as? MainActivity)?.setFabVisible(View.VISIBLE)
+        (activity as? MainActivity)?.setFabVisible(View.INVISIBLE)
     }
 
     override fun onDestroyView() {
