@@ -8,10 +8,8 @@ import com.example.myscheduler.databinding.ActivityCharacterBinding
 class CharacterActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCharacterBinding
-    private lateinit var name: NameFragment
-    private lateinit var chara: CharacterFragment
-    private lateinit var chara1: CharacterFragment2
     private lateinit var kisekae: KisekaeFragment
+    private lateinit var charamain: CharacterFragment2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,39 +19,44 @@ class CharacterActivity : AppCompatActivity() {
         binding = ActivityCharacterBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        //Characterの名前
+
+
+        /*
+        //備忘録　Characterの名前
         name = NameFragment()
         supportFragmentManager.beginTransaction().apply {
             replace(R.id.nameFreme, name)
             commit()
         }
+    */
 
-
-        //Characterの画像
-        chara = CharacterFragment()
+        //CharacterMain（画像、名前）
+        charamain = CharacterFragment2()
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.characterFreme, chara)
+            replace(R.id.characterFrame, charamain)
             addToBackStack(null)
             commit()
         }
 
-        /*//備忘録　ボタンタップでCharacter画像（フラグメント）変更
-        chara1 = CharacterFragment2()
-        binding.KisekaeButton.setOnClickListener{
+
+        //ボタンタップでCharacter画像（フラグメント）変更
+        kisekae = KisekaeFragment()
+        binding.kisekaeButton.setOnClickListener{
             supportFragmentManager.beginTransaction().apply {
-                replace(R.id.characterFreme, chara1)
+                replace(R.id.characterFrame, kisekae)
                 addToBackStack(null)
                 commit()
             }
-        }*/
-
-
-        kisekae = KisekaeFragment()
-        supportFragmentManager.beginTransaction().apply {
-            replace(R.id.kisekaeFreme, kisekae)
-            addToBackStack(null)
-            commit()
         }
+
+        binding.kaiwaButton.setOnClickListener{
+            supportFragmentManager.beginTransaction().apply {
+                replace(R.id.characterFrame, charamain)
+                addToBackStack(null)
+                commit()
+            }
+        }
+
 
 
         //戻るボタンの処理
