@@ -39,10 +39,11 @@ class KisekaeFragment : Fragment() {
             getFragmentManager().beginTransaction().remove(this).commit()
         }*/
 
+        /*
         val kisekaeback = view?.findViewById<Button>(R.id.kisekaeBackButton)
         kisekaeback?.setOnClickListener {
             activity?.supportFragmentManager?.popBackStack()
-        }
+        }*/
 
 
     }
