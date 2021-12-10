@@ -54,6 +54,7 @@ class ScheduleEditFragment : Fragment() {
             binding.titleEdit.setText(schedule?.title)
             binding.detailEdit.setText(schedule?.detail)
             binding.delete.visibility = View.VISIBLE
+
         } else {
             binding.delete.visibility = View.INVISIBLE
         }
@@ -108,11 +109,14 @@ class ScheduleEditFragment : Fragment() {
                     if (date != null) schedule.date = date
                     schedule.title = binding.titleEdit.text.toString()
                     schedule.detail = binding.detailEdit.text.toString()
+
+
                 }
                 Snackbar.make(view, "追加しました", Snackbar.LENGTH_SHORT)
                     .setAction("戻る") { findNavController().popBackStack() }
                     .setActionTextColor(Color.YELLOW)
                     .show()
+
             }
             else -> {
                 realm.executeTransaction { db: Realm ->
@@ -163,6 +167,7 @@ class ScheduleEditFragment : Fragment() {
         } catch (e: ParseException) {
             return null
         }
+
     }
 
 }

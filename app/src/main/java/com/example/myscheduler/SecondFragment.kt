@@ -1,6 +1,5 @@
 package com.example.myscheduler
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -55,6 +54,7 @@ class SecondFragment : Fragment() {
             timeInMillis = binding.calendarView.date
 
         }
+
         findSchedule(
             dateTime.get(Calendar.YEAR),
             dateTime.get(Calendar.MONTH),
